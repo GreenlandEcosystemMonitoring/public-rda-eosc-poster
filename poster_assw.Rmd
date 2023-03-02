@@ -1,0 +1,134 @@
+---
+title: "Greenland Ecosystem Monitoring: Journey Towards Meeting The FAIR Principles"
+author:
+  - name: "Jonas K. Roemer"
+    affil: 1
+    email: jkr@ecos.au.dk
+    orcid: 0000-0002-8895-2529
+    main: true
+affiliation:
+  - num: 1
+    address: Department of Ecoscience, Aarhus University
+main_findings:
+  - "An independent **arctic data** repository"
+  - "Open Data - **FAIR Principles**"
+  
+  - '![](https://g-e-m.dk/fileadmin/_processed_/6/a/csm_GEM_Strategy_-_Sampling_Strategy_Figure_f6e965a950.jpg){.main_pic}'
+  - '![](EOSCFutureLogo.png){.main-img-right}'
+  - '![](rdalogo.png){.main-img-right2}'
+logoleft_name: '![](https://ec.europa.eu/regional_policy/images/information-sources/logo-download-center/eu_flag.jpg){.main-img-left}'
+#logoright_name: '![](EOSCFutureLogo.png){.main-img-right}'
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: true
+    pandoc_args: --mathjax
+    highlight: haddock
+    number_sections: false
+link-citations: true
+bibliography: packages.bib
+---
+
+```{css, echo=FALSE}
+.main-img-right2 {
+  width:18%;
+  right:0.5in;
+  bottom: 4in;
+  position: absolute;
+}
+```
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+```{r myplot, include=FALSE}
+svg('myplot.svg')
+plot(iris$Sepal.Length, iris$Sepal.Width)
+dev.off()
+```
+
+# Introduction
+
+This presents the observations, lessons learned and ongoing activities in data management of [Greenland Ecosystem Monitoring (GEM)](https://www.g-e-m.dk), with a focus on taking an independent arctic data repository towards open science and meeting the FAIR data principles (<b>F</b>indable-<b>A</b>ccessible-<b>I</b>nteroperable-<b>R</b>eusable). Requirements on data management and demands for following the FAIR principles are more common today than they were a few years ago - FAIR as a term was only coined in 2016. The field has been, and is developing rapidly and we are excited to be part in both general and arctic data communities.
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+# 1. Awareness
+
+Awareness and drivers of FAIR within the circles of the GEM data repository.
+
+> <b>First level:</b>  Requests from expert users of our open data website to improve it on many points - external influence.
+
+> <b>Second level:</b> Discussions and presentations in the project coordination group to make sure the data providers / scientists are involved in the reasoning, needs and choices for FAIR data. 
+
+> <b>Third level:</b> Implementing with reference to [GO-FAIR](https://go-fair.org) and [RDA - Fair Data Maturity Model](https://www.rd-alliance.org/group/fair-data-maturity-model-wg/outcomes/fair-data-maturity-model-specification-and-guidelines-0)
+
+> <b>Daily use level:</b> Dataset landing pages, DOIs, CC-BY-SA 4.0 license and improved metadata that's harvested by other arctic data portals, makes it much easier for people to find, understand and cite the datasets.
+
+# 2. Community Knowledge and Guidance
+
+Lifesaver: Targeted communities, tech-workshops with peer groups and guidance websites help us navigate and filter the uncertainty that abound when discussing standards, FAIR data, licenses, open science in an interdisciplinary context.
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">Title</th>
+   <th style="text-align:right;">Type</th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;">[Research Data Alliance (RDA)](https://rd-alliance.org/)</td>
+   <td style="text-align:right;">Community, top level</td>
+
+  </tr>
+  <tr>
+   <td style="text-align:left;">[DataCite](https://datacite.org)</td>
+   <td style="text-align:right;">Community, PID</td>
+
+  </tr>
+  <tr>
+   <td style="text-align:left;">[INTERACT](https://eu-interact.org/)</td>
+   <td style="text-align:right;">Arctic data workshops</td>
+  </tr>
+
+  <tr>
+   <td style="text-align:left;">[Arctic Data Committee](https://arcticdc.org/)</td>
+   <td style="text-align:right;">Arctic data workshops</td>
+  </tr>
+
+  <tr>
+   <td style="text-align:left;">[GO-FAIR](https://go-fair.org)</td>
+   <td style="text-align:right;">Simple FAIR guidelines</td>
+  </tr>
+
+  <tr>
+   <td style="text-align:left;">[QGreenland](https://qgreenland.org/)</td>
+   <td style="text-align:right;">Arctic data workshops</td>
+  </tr>
+
+</tbody>
+</table>
+
+# 3. Key achievements and plans
+ <div style="color:green">
+ + Extensive review and improvement of metadata.
+ + DataCite agreement and API integration to mint DOIs (identifiers).
+ + Making endpoints for portals to harvest our metadata (science-on-schema.org, DataCite Metadata Schema).
+ + Decisions on license terms taken within the project coordination group.
+ </div>
+ <div style="color:darkgreen">
+ + Plans: interdisciplinary vocabularies, coretrustseal, big data, modernizing website, new integrations?: [EOSC portal](https://eosc-portal.eu/), [Data-One](https://dataone.org)
+ </div>
+
+# Acknowledgments
+This work has been produced with the support of the RDA Europe Ambassador programme. It has received funding from the European Union’s Horizon 2020 (H2020) research and innovation programme via the call INFRAEOSC-03-2020 - Grant Agreement Number 101017536.
